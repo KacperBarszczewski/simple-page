@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kacper Barszczewski">
+    <link rel="stylesheet" href="css1.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="js1.js"></script>
+    <title>Koszulka biała</title>
+</head>
+
+<body>
+    <header>
+        <div class="gora">
+            <a href="sklep1.html" style="text-decoration: none;"><b>Basic</b></a>
+        </div>
+    </header>
+    <nav class="topnav" id="myTopnav">
+        <a href="javascript:void(0)" onclick="openNav()" class="material-icons-outlined active"
+            style="height: 48px;">shopping_cart</a>
+        <a href="sklep1.html" class="active">Strona główna</a>
+        <a href="formularz.html" class="prawa">Formularz</a>
+        <a href="autor.html" class="prawa">Autor</a>
+
+        <div id="mySidenav" class="sidenav">
+            <a onclick="closeNav()" href="javascript:void(0)" class="closebtn">&times;</a>
+        </div>
+    </nav>
+    <main>
+        <div class="strona2">
+            <div class=koszulki>Koszulka Biała</div>
+            <div class="koszulka">
+                <div class="ramka">
+                    <div class="slider">
+                        <div id="zdjecie1" class="zdjecie fade">
+                            <img src="zdjecia/tshirt4.jpg" alt="koszulka biała">
+                        </div>
+                        <div id="zdjecie2" class="zdjecie fade">
+                            <img src="zdjecia/tshirt3.jfif" alt="koszulka biała">
+                        </div>
+                        <div id="zdjecie3" class="zdjecie fade">
+                            <img src="zdjecia/tshirt1.jpg" alt="koszulka biała">
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                </div>
+                <div class="cena_i_tabela rozmiarów">
+                    <div class="cena" id="cena1">33 zł</div>
+                    <div class="rozmiar">
+                        <input type="number" min="0" id="ilosckoszulkaB" name="ilosc" placeholder="Ilość" class="ilosc">
+                        <select class="TabRoz" id="TabRozkoszulkaB" name="TabRoz">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                            <option value="XXXL">XXXL</option>
+                        </select>
+                        <input type="submit" class="material-icons-outlined koszyk" value="shopping_cart"
+                            onclick="pobierzWartościzkoszulka(1)">
+                    </div>
+                    <div class="tabela1">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th> Rozmiar
+                                    <th> S
+                                    <th> M
+                                    <th> L
+                                    <th> XL
+                                    <th> XXL
+                                    <th> XXXL
+                            <tbody>
+                                <tr>
+                                    <th> Wzrost
+                                    <td> 164-170
+                                    <td> 170-176
+                                    <td> 176-182
+                                    <td> 182-188
+                                    <td> 188-192
+                                    <td> 188-192
+                                <tr>
+                                    <th> Obwód klatki
+                                    <td> 90
+                                    <td> 96
+                                    <td> 102
+                                    <td> 108
+                                    <td> 114
+                                    <td> 120
+                                <tr>
+                                    <th> Obwód pasa
+                                    <td> 82
+                                    <td> 86
+                                    <td> 90
+                                    <td> 94
+                                    <td> 98
+                                    <td> 102
+                                <tr>
+                                    <th> Obwód bioder
+                                    <td> 96
+                                    <td> 100
+                                    <td> 104
+                                    <td> 108
+                                    <td> 112
+                                    <td> 118
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="koszulka" id="przedial"></div>
+            <div class=koszulki>Opis</div>
+            <div class="koszulka">
+                <div class="vd">
+                    <video muted controls autoplay loop>
+                        <source src="zdjecia/vdkbiala.mp4" type="video/mp4">
+                        "Plik wideo nie jest obsługiwany przez przeglądarkę"
+                    </video>
+                </div>
+                <div class="opis" id="cena1">Idealna koszulka do ćwiczeń i na co dzień</div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="stopka">2021 &copy; <a href="autor.html">Kacper Barszczewski</a></div>
+    </footer>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("zdjecie");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+</body>
+
+</html>
