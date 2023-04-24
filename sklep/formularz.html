@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kacper Barszczewski">
+    <link rel="stylesheet" href="css1.css">
+    <title>Koszulka biała</title>
+    <style>
+        input[type=number] {
+            width: 250px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 16px;
+            resize: vertical;
+            display: block;
+        }
+
+        input[type=submit] {
+            background-color: greenyellow;
+            color: black;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="gora">
+            <a href="sklep1.html" style="text-decoration: none;"><b>Basic</b></a>
+        </div>
+    </header>
+    <nav class="topnav" id="myTopnav">
+        <a href="sklep1.html" class="active">Strona główna</a>
+        <!-- <a href="#contact"class="prawa">Kontakt</a> -->
+        <a href="../index.html" class="prawa">Autor</a>
+    </nav>
+    <div class="strona">
+        <main id="formularz">
+            <form action="/action_page.php">
+
+                <div>
+                    <label for="co">Co chcesz zrobić:</label>
+                    <input type="radio" name="co" value="1" id="jeden" onclick="pokaz();" /> Zakup
+                    <input type="radio" name="co" value="2" onclick="ukryj();" /> Reklamacja
+                    <input type="radio" name="co" value="3" checked="checked" onclick="ukryj();" /> Problem
+                </div>
+                <div id="wybor">
+                    <div class="zdj">
+                        <label for="zakup1"><img src="zdjecia/koszulka1.jpg" width="250px"></label>
+                        <input type="number" min="0" id="zakup1" name="zakup1" placeholder="Ilość">
+                    </div>
+                    <div class="zdj">
+                        <label for="zakup2"><img src="zdjecia/koszulka2.jpg" width="250px"></label>
+                        <input type="number" min="0" id="zakup2" name="zakup2" placeholder="Ilość">
+                    </div>
+                    <div class="zdj">
+                        <label for="zakup3"><img src="zdjecia/koszulka3.jpg" width="250px"></label>
+                        <input type="number" min="0" id="zakup3" name="zakup3" placeholder="Ilość">
+                    </div>
+
+                    <div class="zdj">
+                        <label for="zakup1"><img src="zdjecia/koszulka4.jpg" width="250px"></label>
+                        <input type="number" min="0" id="zakup4" name="zakup4" placeholder="Ilość">
+                    </div>
+                    <div class="zdj">
+                        <label for="zakup2"><img src="zdjecia/koszulka5.jpg" width="250px"></label>
+                        <input type="number" min="0" id="zakup5" name="zakup5" placeholder="Ilość">
+                    </div>
+                    <div class="zdj">
+                        <label for="zakup3"><img src="zdjecia/koszulka6.jpg" width="250px"></label>
+                        <input type="number" min="0" id="zakup6" name="zakup6" placeholder="Ilość">
+                    </div>
+                </div>
+                <div class="imie">
+                    <label for="fname">Imię*</label>
+                    <input type="text" id="fname" name="imie" placeholder="Twoje imię.." required>
+                </div>
+                <label for="lname">Nazwisko*</label>
+                <input type="text" id="lname" name="nazwisko" placeholder="Twoje nazwisko.." required>
+
+                <label for="e-mail">E-mail*</label>
+                <input type="email" id="e-mail" name="e-mail" placeholder="Twój e-mail.." required>
+
+                <label for="kraj">Kraj</label>
+                <select id="kraj" name="kraj">
+                    <option value="polska">Polska</option>
+                    <option value="niemcy">Niemcy</option>
+                    <option value="czech">Czechy</option>
+                    <option value="slowacja">Słowacja</option>
+                    <option value="ukraina">Ukraina</option>
+                    <option value="bialorus">Białoruś</option>
+                    <option value="litwa">Litwa</option>
+                    <option value="rosja">Rosja</option>
+                    <option value="uk">Wielka Brytania</option>
+                </select>
+                <label for="miasto">Miasto*</label>
+                <input type="text" id="miasto" name="miasto" placeholder="Nazwa miasta do wysyłki" required>
+
+                <label for="ulica">Ulica*</label>
+                <input type="text" id="ulica" name="miasto" placeholder="Nazwa ulicy  do wysyłki" required>
+
+                <label for="opis">Opis</label>
+                <textarea id="opis" name="opis" placeholder="Napisz opis.." style="height:200px"></textarea>
+
+                <input type="submit" value="Zatwierdź">
+            </form>
+        </main>
+    </div>
+    <footer>
+        <div class="stopka">2021 &copy; <a href="../index.html">Kacper Barszczewski</a></div>
+    </footer>
+    <script>
+        function pokaz() {
+            document.getElementById("wybor").style.position = "unset";
+            document.getElementById("wybor").style.visibility = "visible";
+            document.getElementById("wybor").style.opacity = "1";
+        }
+
+        function ukryj() {
+            document.getElementById("wybor").style.visibility = "hidden";
+            document.getElementById("wybor").style.opacity = "0";
+            document.getElementById("wybor").style.position = "absolute";
+
+        }
+    </script>
+</body>
+
+</html>
